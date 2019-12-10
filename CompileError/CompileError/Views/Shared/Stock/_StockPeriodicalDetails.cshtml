@@ -1,0 +1,35 @@
+﻿@model CompileError.Models.StockViewModel
+
+<table>
+    <tr>
+        <th>Sl</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Reorder Level</th>
+        <th>Expired Date</th>
+        <th>Expired Quantity</th>
+        <th>Opening Balance</th>
+        <th>In</th>
+        <th>Out</th>
+        <th>Closing Balance</th>
+    </tr>
+    @{ int sl = 0;}
+    @foreach (var purchase in Model.PurchaseProducts)
+    {
+    <tr>
+        <td>@(++sl)</td>
+        <td>@purchase.Product.Code</td>
+        <td>@purchase.Product.Name</td>
+        <td>@purchase.Product.Category</td>
+        <td>@purchase.Product.ReorderLevel</td>
+        <td>@purchase.ExpireDate</td>
+        <td>@purchase.</td>
+        <td>@purchase.</td>
+        <td>@purchase.</td>
+        <td>@purchase.</td>
+
+
+    </tr>
+    }
+</table>

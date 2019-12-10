@@ -1,0 +1,80 @@
+﻿
+@model CompileError.Models.CustomerViewModel
+@{
+    /**/
+
+
+
+    Layout = "~/Views/Shared/_KLayout.cshtml";
+
+    ViewBag.Title = "Search";
+
+}
+
+<h2>Add Customer </h2>
+
+@section MyCSS
+        {
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 6px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .input-validation-error {
+            border: 1px solid red;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+
+        .field-validation-valid {
+            display: none;
+        }
+    </style>
+
+    <div>
+        <form method='post' style='text-align:center'>
+
+            <b>search</b>
+            @Html.RadioButton("option", "Name") <text>Name</text>
+            @Html.RadioButton("option", "Code")<text>Code</text>
+            <input type="text" name="search" />
+
+
+            <input type='submit' name='search' value="search" style='color:green'>
+
+        </form>
+
+        @{Html.RenderPartial("~/Views/Shared/Customer/_CustomerDetails.cshtml", Model);
+
+        }
+
+    </div>
+    <div>   
+
+        @{Html.ActionLink("Add", "Add");
+
+        }
+
+    </div>
+    @*@section MyScript
+    {
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    }*@
+
+    }

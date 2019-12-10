@@ -1,0 +1,74 @@
+﻿@model CompileError.Models.CustomerViewModel
+@{
+    Layout = "~/Views/Shared/_KLayout.cshtml";
+}
+
+@section MyCSS
+        {
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 6px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .input-validation-error {
+            border: 1px solid red;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+
+        .field-validation-valid {
+            display: none;
+        }
+    </style>
+}
+
+
+<div>
+    <from method="post">
+        <table style="width:100%">
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th>Loyality Point</th>
+            </tr>
+            <tr>
+                <td>@Model.Code</td>
+                <td>@Model.Name</td>
+                <td>@Model.Address</td>
+                <td>@Model.Contact</td>
+                <td>@Model.LoyalityPoint</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type='submit' name='delete' value="delete" style='color:green'>
+                </td>
+                <td></td>
+            </tr>
+
+
+
+        </table>
+    </from>
+
+    @{Html.RenderPartial("~/Views/Shared/Customer/_CustomerDetails.cshtml", Model);
+
+    }
+</div>
+
